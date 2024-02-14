@@ -69,8 +69,14 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'vcr'
+  gem 'webmock'
 end
 
 gem "tailwindcss-rails", "~> 2.3"
 
 gem 'dotenv-rails'
+
+gem 'poke-api-v2'
+
+gem 'rest-client'
