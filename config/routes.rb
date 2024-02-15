@@ -8,4 +8,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :pokemons
+
+  namespace :auth, path: '', as: '' do
+    resources :users, only: [ :new, :create ]
+    resources :sessions, only: [ :new, :create ]
+  end
 end

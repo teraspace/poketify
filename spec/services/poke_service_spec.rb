@@ -6,7 +6,7 @@ RSpec.describe PokeService, type: :service do
 
   describe '#pokemons' do
     it "received a list of pokemons" do
-      VCR.use_cassette("pokemons") do
+      VCR.use_cassette("poke_service_pokemons") do
         result = subject.pokemons
         expect(result["count"]).to eq 1302
         expect(result["next"]).to eq "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20"

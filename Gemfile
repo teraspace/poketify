@@ -71,6 +71,7 @@ group :test do
   gem "selenium-webdriver"
   gem 'vcr'
   gem 'webmock'
+  gem 'rspec-html'
 end
 
 gem "tailwindcss-rails", "~> 2.3"
@@ -80,3 +81,5 @@ gem 'dotenv-rails'
 gem 'poke-api-v2'
 
 gem 'rest-client'
+
+gem 'cssbundling-rails'

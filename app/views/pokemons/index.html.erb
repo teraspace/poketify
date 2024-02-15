@@ -1,0 +1,14 @@
+Pokemons
+
+<div class="container-fluid">
+  <div class="row">
+  <%= Current.user %>
+  </div>
+  <div class="row">
+    <% @pokemons_presenter.results.each do |pokemon| %>
+        <div class="col">
+            <%= render partial: 'card', locals: {pokemon: pokemon, detail: pokemon.detail} %>
+        </div>
+    <% end %>
+  </div>
+</div>
