@@ -23,8 +23,11 @@ module Poketify
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.autoload_paths << "#{Rails.root}/errors"
     config.generators do |g|
       g.factory_bot dir: 'spec/factories'
     end
+    config.exceptions_app = self.routes
+    config.action_dispatch.show_exceptions = true
   end
 end

@@ -14,4 +14,7 @@ Rails.application.routes.draw do
     resources :users, only: [ :new, :create ]
     resources :sessions, only: [ :new, :create ]
   end
+
+  get '/permanent_error', to: 'errors#permanent_error'
+  get '/temporal_error', to: 'errors#temporal_error'
 end

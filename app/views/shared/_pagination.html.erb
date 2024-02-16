@@ -1,0 +1,42 @@
+<style>
+  .pagination {
+    display: inline-block;
+    margin-top: 2rem;
+    height: 40px;
+  }
+
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .pagination a:hover:not(.active) {background-color: #ddd;}
+</style>
+<br><br><br><br>
+
+
+<div class="pagination d-flex justify-content-center">
+    <a href=<%= pokemons_path({limit: collection.limit, offset: 0}) %>>&laquo;</a>
+    <% (1..collection.total_pages).first(9)
+        .each_with_index do |pokemon, index| %>
+      <% page = index + 1 %>
+      <% current_page = params[:page] || 1 %>
+      <% active =  (page.to_i == current_page.to_i ? 'active' : ' ') %>
+      <a
+        class = "<%= active %>"
+        href =  "<%= pokemons_path({page: page, limit: collection.limit, offset: (collection.offset * (page))-20}) %>"
+      >
+        <%= page %>
+      </a>
+    <% end %>
+    <a href="#" class="" href="#"><%= collection.total_pages %></a>
+    <a href=<%= pokemons_path({limit: collection.limit, offset: collection.offset}) %> >&raquo;</a>
+</div>
+

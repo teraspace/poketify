@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  skip_before_action :protect_pages
-
   before_action :set_current_user
   before_action :protected_pages
 

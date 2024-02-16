@@ -1,12 +1,17 @@
 class PokemonPresenter
 
-  attr_accessor :name, :url, :detail, :sprites, :photo, :weight, :type, :abilites, :base_experience, :species, :moves, :description
+  attr_accessor :name, :url, :detail, :sprites, :photo, :weight, :type, :abilites, :base_experience, :species, :moves, :description, :height, :id
 
   def initialize(pokemon)
     pokemon = pokemon.with_indifferent_access
     @name = pokemon["name"].capitalize
     @url = pokemon["url"]
+    @id = pokemon["id"] || id
     @detail = nil
+  end
+
+  def id
+    @url.split("/")[6]
   end
 
   def detail
@@ -27,6 +32,10 @@ class PokemonPresenter
     @detail["weight"]
   end
 
+  def height
+    @detail["height"]
+  end
+
   def type
     types = @detail["types"]
     types.map {|k,_v| k["type"] }.map {|k,_v| k["name"] }
@@ -41,7 +50,7 @@ class PokemonPresenter
   end
 
   def moves
-    @detail["moves"].map {|k,_v| k["move"] }.map {|k,_v| k["name"] }
+    @detail["moves"].map {|k,_v| k["move"] }.map {|k,_v| k["name"].capitalize }
   end
 
   def base_experience

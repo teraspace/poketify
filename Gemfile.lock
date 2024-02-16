@@ -175,6 +175,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
+    pagy (6.4.4)
     poke-api-v2 (0.1.1)
     pry (0.14.2)
       coderay (~> 1.1)
@@ -330,6 +331,7 @@ DEPENDENCIES
   faker (~> 3.2)
   jbuilder
   jsbundling-rails
+  pagy
   poke-api-v2
   pry
   pry-byebug

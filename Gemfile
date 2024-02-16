@@ -83,3 +83,5 @@ gem 'poke-api-v2'
 gem 'rest-client'
 
 gem 'cssbundling-rails'
+
+gem 'pagy'

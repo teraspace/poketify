@@ -1,16 +1,46 @@
-<div class="card d-flex container mt-1" style="border: none; width: 15rem;">
-    <div class="card p-1 bg-white"><i class="fa fa-apple"></i>
-        <div class="about-product text-center mt-1"><img src=<%= pokemon.photo %> width="150">
-            <div>
-                <h4><%= pokemon.name %></h4>
-                <h6 class="mt-0 text-black-50"><%= pokemon.description %></h6>
+<a href="<%= pokemon_path(pokemon.id) %>">
+    <div class="card d-flex container mt-1" style="border: none; width: 19rem;">
+        <div class="card p-1 bg-white"><i class="fa fa-apple"></i>
+            <div class="about-product text-center mt-1"><img src=<%= pokemon.photo %> width="150">
+                <div class="row">
+                    <h4><%= pokemon.name %></h4>
+                </div>
+                <div class="">
+                    <% pokemon.type.first(1).each do |type|  %>
+                        <span class="badge <%= pokemon_type(type) %>" >
+                            <%= type %>
+                        </span>
+                    <% end %>
+                </div>
             </div>
-        </div>
-        <div class="stats mt-1">
-            <h5>Abilities:</h5>
-            <% pokemon.abilities.each do |ability|  %>
-                <div class="d-flex justify-content-between p-price"><span><%= ability %></span></div>
-            <% end %>
+            <br>
+            <div class="row text-center">
+                <div class="stats mt-1" style="max-width: 6rem;">
+                    <div>
+                        <h3><%= pokemon.weight %></h3>
+                        <p>Weight</p>
+                    </div>
+                </div>
+                <div class="stats mt-1" style="max-width: 6rem;">
+                    <div>
+                        <h3><%= pokemon.base_experience %></h3>
+                        <p>Exp</p>
+                    </div>
+                </div>
+                <div class="stats mt-1" style="max-width: 6rem;">
+                    <div>
+                        <h3><%= pokemon.height %></h3>
+                        <p>Exp</p>
+                    </div>
+                </div>
+                <div class="stats mt-1">
+                    <h5>Abilities:</h5>
+                    <% pokemon.abilities.each do |ability|  %>
+                        <span><%= ability %></span>
+                    <% end %>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
+</a>
