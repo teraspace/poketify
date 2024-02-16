@@ -8,6 +8,7 @@ class PokemonPresenter
     @url = pokemon["url"]
     @id = pokemon["id"] || id
     @detail = nil
+    @evolutions = []
   end
 
   def id
@@ -17,6 +18,17 @@ class PokemonPresenter
   def detail
     poke_service = PokeService.new
     @detail = poke_service.pokemon_detail(@url)
+  end
+
+  def evolution_chain
+    detail if species.nil?
+
+    poke_service = PokeService.new
+    url = poke_service.species_detail(species["url"])["evolution_chain"]["url"]
+    evolution_chain = poke_service.species_detail(url)
+    chain = evolution_chain["chain"]
+
+    parse_evolutions(chain)
   end
 
   def sprites
@@ -46,7 +58,9 @@ class PokemonPresenter
   end
 
   def species
-    @detail["species"]["name"]
+    detail if @detail.nil?
+
+    @detail["species"]
   end
 
   def moves
@@ -60,6 +74,21 @@ class PokemonPresenter
   def description
     "With Base Exp of #{base_experience} #{@name}comes from the #{species} specie
     and wiil give you about of #{moves.size} moves ( #{moves.first(3).join(',')} )
-    ".first(100) + " ... "
+    "
+  end
+
+  def evolutions
+    evolution_chain if @evolutions.empty?
+
+    @evolutions
+  end
+
+  private
+
+  def parse_evolutions(chain)
+    return "" if chain.nil?
+
+    @evolutions.push chain["species"] if @evolutions.empty?
+    @evolutions.push chain["evolves_to"][0]["species"]
   end
 end

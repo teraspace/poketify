@@ -1,44 +1,63 @@
-<div class="card d-flex container mt-1" style="border: none; width: 19rem;">
-    <div class="card p-1 bg-white"><i class="fa fa-apple"></i>
-        <div class="about-product text-center mt-1"><img src=<%= @pokemon_presenter.photo %> width="150">
-            <div class="row">
-                <h4><%= @pokemon_presenter.name %></h4>
-            </div>
-            <div class="">
-                <% @pokemon_presenter.type.first(1).each do |type|  %>
-                    <span class="badge <%= pokemon_type(type) %>" >
-                        <%= type %>
-                    </span>
-                <% end %>
-            </div>
-        </div>
-        <br>
-        <div class="row text-center">
-            <div class="stats mt-1" style="max-width: 6rem;">
-                <div>
-                    <h3><%= @pokemon_presenter.weight %></h3>
-                    <p>Weight</p>
+<div class="container-fluid">
+    <div class="justify-left">
+        <div class="card d-flex container mt-1" style="border: none; width: 19rem;">
+            <div class="card p-1 bg-white"><i class="fa fa-apple"></i>
+                <div class="about-product text-center mt-1"><img src=<%= @pokemon_presenter.photo %> width="150">
+                    <div class="row">
+                        <h4><%= @pokemon_presenter.name %></h4>
+                    </div>
+                    <div class="">
+                        <% @pokemon_presenter.type.first(1).each do |type|  %>
+                            <span class="badge <%= pokemon_type(type) %>" >
+                                <%= type %>
+                            </span>
+                        <% end %>
+                    </div>
                 </div>
-            </div>
-            <div class="stats mt-1" style="max-width: 6rem;">
-                <div>
-                    <h3><%= @pokemon_presenter.base_experience %></h3>
-                    <p>Exp</p>
+                <br>
+                <div class="row text-center">
+                    <div class="stats mt-1" style="max-width: 6rem;">
+                        <div>
+                            <h3><%= @pokemon_presenter.weight %></h3>
+                            <p>Weight</p>
+                        </div>
+                    </div>
+                    <div class="stats mt-1" style="max-width: 6rem;">
+                        <div>
+                            <h3><%= @pokemon_presenter.base_experience %></h3>
+                            <p>Exp</p>
+                        </div>
+                    </div>
+                    <div class="stats mt-1" style="max-width: 6rem;">
+                        <div>
+                            <h3><%= @pokemon_presenter.height %></h3>
+                            <p>Exp</p>
+                        </div>
+                    </div>
+                    <div class="stats mt-1">
+                        <h5>Abilities:</h5>
+                        <% @pokemon_presenter.abilities.each do |ability|  %>
+                            <span><%= ability %></span>
+                        <% end %>
+                    </div>
+                    <div class="stats mt-1">
+                        <h5>Evolves To</h5>
+                        <span>
+                            <%= @pokemon_presenter.evolutions.last["name"]  %>
+                        </span>
+                    </div>
                 </div>
-            </div>
-            <div class="stats mt-1" style="max-width: 6rem;">
-                <div>
-                    <h3><%= @pokemon_presenter.height %></h3>
-                    <p>Exp</p>
-                </div>
-            </div>
-            <div class="stats mt-1">
-                <h5>Abilities:</h5>
-                <% @pokemon_presenter.abilities.each do |ability|  %>
-                    <span><%= ability %></span>
-                <% end %>
-            </div>
-        </div>
 
-    </div>
-</div>
+            </div>
+        </div>
+    <div>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <h2>
+                Description
+            </h2>
+            <p class="text-left"><%= @pokemon_presenter.description.capitalize %></p>
+        <div>
+    <div>
+<div>
