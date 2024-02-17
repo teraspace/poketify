@@ -1,1 +1,17 @@
-<%= react_component "NavigationBarApp" %>
+
+<%= react_component("Card", props: {
+
+    pokemon: @pokemon_presenter.as_json,
+    detail: @pokemon_presenter.detail,
+    photo: @pokemon_presenter.photo,
+    type: { name: @pokemon_presenter.type, class:  pokemon_type(@pokemon_presenter.type.first) },
+    weight: @pokemon_presenter.weight,
+    height: @pokemon_presenter.height,
+    base_experience: @pokemon_presenter.base_experience,
+    abilities: @pokemon_presenter.abilities,
+    description: @pokemon_presenter.description,
+    evolutions: @pokemon_presenter.evolutions
+
+}) %>
+
+

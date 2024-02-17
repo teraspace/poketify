@@ -4,7 +4,7 @@ class PokemonsController < ApplicationController
   skip_before_action :protected_pages, only: [:index]
 
   def index
-    poke_service = PokeService.new(offset: pokemons_params[:offset])
+    poke_service = PokeService.new(offset: pokemons_params[:offset], limit: pokemons_params[:limit])
     pokemons = poke_service.pokemons
 
     @pokemons_presenter = PokemonsPresenter.new pokemons, PokemonPresenter
@@ -15,11 +15,12 @@ class PokemonsController < ApplicationController
     pokemon = poke_service.pokemon(pokemons_params[:id])
 
     @pokemon_presenter = PokemonPresenter.new pokemon
+    @pokemon_presenter.detail
   end
 
   private
 
   def pokemons_params
-    params.permit :limit, :offset, :id
+    params.permit :limit, :offset, :id, :page
   end
 end

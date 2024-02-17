@@ -37,23 +37,32 @@ class PokemonPresenter
 
   def photo
     detail if @detail.nil?
+
     sprites["front_default"]
   end
 
   def weight
+    detail if @detail.nil?
+
     @detail["weight"]
   end
 
   def height
+    detail if @detail.nil?
+
     @detail["height"]
   end
 
   def type
+    detail if @detail.nil?
+
     types = @detail["types"]
     types.map {|k,_v| k["type"] }.map {|k,_v| k["name"] }
   end
 
   def abilities
+    detail if @detail.nil?
+
     @detail["abilities"].map {|k,_v| k["ability"] }.map {|k,_v| k["name"].gsub('-', ' ').capitalize }
   end
 
@@ -64,20 +73,27 @@ class PokemonPresenter
   end
 
   def moves
+    detail if @detail.nil?
+
     @detail["moves"].map {|k,_v| k["move"] }.map {|k,_v| k["name"].capitalize }
   end
 
   def base_experience
+    detail if @detail.nil?
+
     @detail["base_experience"]
   end
 
   def description
-    "With Base Exp of #{base_experience} #{@name}comes from the #{species} specie
+    detail if @detail.nil?
+
+    "With Base Exp of #{base_experience} #{@name}comes from the #{species["name"].capitalize} specie
     and wiil give you about of #{moves.size} moves ( #{moves.first(3).join(',')} )
     "
   end
 
   def evolutions
+    detail if @detail.nil?
     evolution_chain if @evolutions.empty?
 
     @evolutions

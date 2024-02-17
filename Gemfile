@@ -86,6 +86,5 @@ gem 'cssbundling-rails'
 
 gem 'pagy'
 
-gem "shakapacker", "7.0.1"
-
-gem "react_on_rails", "13.3.1"
+gem "shakapacker", "7.0.2"
+gem "react_on_rails", "13.4.0"

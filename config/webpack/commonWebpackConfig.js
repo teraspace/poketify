@@ -1,16 +1,30 @@
-// The source code including full typescript support is available at: 
-// https://github.com/shakacode/react_on_rails_demo_ssr_hmr/blob/master/config/webpack/commonWebpackConfig.js
-
 // Common configuration applying to client and server configuration
-const { webpackConfig: baseClientWebpackConfig, merge } = require('shakapacker');
+const { generateWebpackConfig, merge } = require('shakapacker')
 
 const commonOptions = {
   resolve: {
-    extensions: ['.css', '.ts', '.tsx'],
+      extensions: ['.css', '.ts', '.tsx']
   },
+  module: {
+    rules: [
+      {
+        test: /\.mdx?$/,
+        use: [
+          {
+            loader: '@mdx-js/loader',
+          }
+        ]
+      }
+    ]
+  }
+}
+
+const ignoreWarningsConfig = {
+  ignoreWarnings: [/Module not found: Error: Can't resolve 'react-dom\/client'/],
 };
 
 // Copy the object using merge b/c the baseClientWebpackConfig and commonOptions are mutable globals
-const commonWebpackConfig = () => merge({}, baseClientWebpackConfig, commonOptions);
+// const commonWebpackConfig = () => (merge({}, baseClientWebpackConfig, commonOptions))
+const commonWebpackConfig = () => (merge({}, generateWebpackConfig(), commonOptions, ignoreWarningsConfig))
 
-module.exports = commonWebpackConfig;
+module.exports = commonWebpackConfig

@@ -22,21 +22,16 @@
 <br><br><br><br>
 
 
-<div class="pagination d-flex justify-content-center">
-    <a href=<%= pokemons_path({limit: collection.limit, offset: 0}) %>>&laquo;</a>
+<div class="pagination d-flex justify-content-center"  data-turbolinks="false">
+    <%= link_to "&laquo;".html_safe, pokemons_path({limit: collection.limit, offset: 0}), data: { turbo: false } %>
     <% (1..collection.total_pages).first(9)
         .each_with_index do |pokemon, index| %>
       <% page = index + 1 %>
       <% current_page = params[:page] || 1 %>
       <% active =  (page.to_i == current_page.to_i ? 'active' : ' ') %>
-      <a
-        class = "<%= active %>"
-        href =  "<%= pokemons_path({page: page, limit: collection.limit, offset: (collection.offset * (page))-20}) %>"
-      >
-        <%= page %>
-      </a>
+      <%= link_to page,pokemons_path({page: page, limit: collection.limit, offset: (collection.offset * (page))-20}), data: { turbo: false }, class: active  %>
     <% end %>
     <a href="#" class="" href="#"><%= collection.total_pages %></a>
-    <a href=<%= pokemons_path({limit: collection.limit, offset: collection.offset}) %> >&raquo;</a>
+    <%= link_to "&raquo;".html_safe, pokemons_path({limit: collection.limit, offset: collection.offset}), data: { turbo: false } %>
 </div>
 
