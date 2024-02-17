@@ -97,3 +97,10 @@ build-iPhoneSimulator/
 
 /node_modules
 >>>>>>> 8d9e396 (PKT-001: poketify boiler plate)
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
