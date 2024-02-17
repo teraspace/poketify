@@ -1,0 +1,145 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pokeapi.co/ap/v2/pokemon?limit=20&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (darwin23 arm64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - pokeapi.co
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Sat, 17 Feb 2024 02:41:08 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=3600
+      Last-Modified:
+      - Tue, 13 Feb 2024 17:19:09 GMT
+      Strict-Transport-Security:
+      - max-age=31556926
+      X-Served-By:
+      - cache-mia-kmia1760077-MIA
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      X-Timer:
+      - S1708137669.812557,VS0,VE1
+      Vary:
+      - x-fh-requested-host, accept-encoding
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=tODKelqM5GbLptoDtyQfbiQ7%2FXrc6M9NzatERo7gA7yua4cAa5873a1xzNm0GIJOwES8IteklPS41waFIsHQ2aUc%2BpoKiIbds0KdLo0PslGe%2FIUrNSgo4KK7Nz%2B0"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 856aab6df86c4954-MIA
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        <!DOCTYPE html><html lang="en"><head><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MD89GGQ');</script><meta name="generator" content="React Static"><title data-react-helmet="true">Page Not Found - Pok&#xE9;API</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no"><meta data-react-helmet="true" property="og:type" content="website"><meta data-react-helmet="true" name="Description" content="An open RESTful API for Pok&#xE9;mon data"><meta data-react-helmet="true" property="keywords" content="pokemon pok&#xE9;mon API REST free"><meta data-react-helmet="true" property="og:image" content="/static/pokeapi_256.3fa72200.png"><meta data-react-helmet="true" property="description" content="An open RESTful API for Pok&#xE9;mon data"><link rel="preload" as="script" href="/templates/styles.a4c33053.js"><link rel="preload" as="script" href="/templates/vendors~main.b08a0546.js"><link rel="preload" as="script" href="/main.2a1cfd9e.js"><link rel="preload" as="style" href="/styles.d61da460.css"><link rel="stylesheet" href="/styles.d61da460.css"><link data-react-helmet="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700"><link data-react-helmet="true" rel="icon" href="/pokeapi_192_square.png"><script data-react-helmet="true" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9300109033485921" crossorigin="anonymous"></script><script data-react-helmet="true" async src="https://www.googletagmanager.com/gtag/js?id=G-X3X3FV0WED"></script><script data-react-helmet="true">window.dataLayer = window.dataLayer || [];
+                            function gtag() {
+                                dataLayer.push(arguments)
+                            }
+                            gtag('js', new Date());
+                            gtag('config', 'G-X3X3FV0WED');</script></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD89GGQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="root"><div id="site-header" class="Header-module__headerwrapper--2Yq6L"><header class="Header-module__header--3xzeo"><a class="Header-module__homelink--1N9Da" title="Pok&#xE9;API" href="/"><img src="/static/pokeapi_256.3fa72200.png" alt="Pok&#xE9;API"></a><nav class="Header-module__nav--25Sms"><a class="Header-module__link--zKtyy" href="/">Home</a><a class="Header-module__link--zKtyy" href="/about">About</a><a class="Header-module__link--zKtyy" href="/docs/v2">API v2</a><a class="Header-module__link--zKtyy" href="/docs/graphql">GraphQL v1beta</a></nav></header></div><main id="site-content"><div class="Page-module__page--mC5go"><div class="Page-module__constrain_width--N2xeq"><h1>404 &#x2013; Page Not Found</h1><p>We couldn&apos;t find what you were looking for.</p><p>Please contact the owner of the site that linked you to the original URL and let them know their link is broken.</p></div></div></main><footer id="site-footer" class="Footer-module__footer--3nalg"><div class="Footer-module__container--yg5jX"><div>Created by <a href="https://phalt.github.io/">Paul Hallett</a> and other <a href="https://github.com/PokeAPI/pokeapi#contributing">Pok&#xE9;API contributors</a> around the world. Pok&#xE9;mon and Pok&#xE9;mon character names are trademarks of Nintendo.</div><div><a href="https://pokeapi.statuspage.io/"><img alt="Status" src="https://img.shields.io/badge/dynamic/json?color=blue&amp;label=status&amp;query=%24.status.description&amp;url=https%3A%2F%2Fzlfyqp3hlvly.statuspage.io%2Fapi%2Fv2%2Fsummary.json"></a></div></div></footer></div><script type="text/javascript">window.__routeInfo = JSON.parse("{\"template\":\"__react_static_root__/src/pages/404.js\",\"sharedHashesByProp\":{},\"data\":{},\"path\":\"404\",\"sharedData\":{},\"siteData\":{\"alerts\":[{\"htmlMessage\":\"<p>PokeAPI proudly announces Beta support for GraphQL. Access our free console at <a href=\\\"https://beta.pokeapi.co/graphql/console/\\\">beta.pokeapi.co/graphql/console</a> and take a look at the <a href=\\\"/docs/graphql\\\">documentation</a></p>\\n\",\"level\":\"success\",\"id\":\"359b722e\"},{\"htmlMessage\":\"<p><strong>Sword and Shield</strong> data might be inaccurate and lacking in various aspects due to the fact that it is not taken directly from Nintendo&#39;s Pokemon ROMs. If you spot any mistake, please report it <a href=\\\"https://github.com/PokeAPI/pokedex/issues\\\">here</a></p>\\n\",\"level\":\"info\",\"id\":\"c5278044\"}]}}");</script><script defer type="text/javascript" src="/templates/styles.a4c33053.js"></script><script defer type="text/javascript" src="/templates/vendors~main.b08a0546.js"></script><script defer type="text/javascript" src="/main.2a1cfd9e.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"856aab6df86c4954","version":"2024.2.0","r":1,"token":"9fbcf60ab0bc4d7d9c24cc0a2b3b7af0","b":1}' crossorigin="anonymous"></script>
+        </body></html>
+  recorded_at: Sat, 17 Feb 2024 02:41:08 GMT
+- request:
+    method: get
+    uri: https://pokeapi.co/ap/v2/pokemon?limit=20&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (darwin23 arm64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - pokeapi.co
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Sat, 17 Feb 2024 02:42:14 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=3600
+      Last-Modified:
+      - Tue, 13 Feb 2024 17:19:09 GMT
+      Strict-Transport-Security:
+      - max-age=31556926
+      X-Served-By:
+      - cache-mia-kmia1760062-MIA
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      X-Timer:
+      - S1708137735.926649,VS0,VE1
+      Vary:
+      - x-fh-requested-host, accept-encoding
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=OE%2FGCH%2FFY6XO%2F4Gc8UYBbjTztOGgWXpbXv6Un0XCcarHORaE4hDwRWDLSrqUR1s1XiJuCZtY4OJvt2BcatKIqeVpdekHJX5BCNwP%2F0NOU9WDKDbpK8xo4v8%2FL535"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 856aad0b2e5f8e00-MIA
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        <!DOCTYPE html><html lang="en"><head><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MD89GGQ');</script><meta name="generator" content="React Static"><title data-react-helmet="true">Page Not Found - Pok&#xE9;API</title><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no"><meta data-react-helmet="true" property="og:type" content="website"><meta data-react-helmet="true" name="Description" content="An open RESTful API for Pok&#xE9;mon data"><meta data-react-helmet="true" property="keywords" content="pokemon pok&#xE9;mon API REST free"><meta data-react-helmet="true" property="og:image" content="/static/pokeapi_256.3fa72200.png"><meta data-react-helmet="true" property="description" content="An open RESTful API for Pok&#xE9;mon data"><link rel="preload" as="script" href="/templates/styles.a4c33053.js"><link rel="preload" as="script" href="/templates/vendors~main.b08a0546.js"><link rel="preload" as="script" href="/main.2a1cfd9e.js"><link rel="preload" as="style" href="/styles.d61da460.css"><link rel="stylesheet" href="/styles.d61da460.css"><link data-react-helmet="true" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700"><link data-react-helmet="true" rel="icon" href="/pokeapi_192_square.png"><script data-react-helmet="true" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9300109033485921" crossorigin="anonymous"></script><script data-react-helmet="true" async src="https://www.googletagmanager.com/gtag/js?id=G-X3X3FV0WED"></script><script data-react-helmet="true">window.dataLayer = window.dataLayer || [];
+                            function gtag() {
+                                dataLayer.push(arguments)
+                            }
+                            gtag('js', new Date());
+                            gtag('config', 'G-X3X3FV0WED');</script></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD89GGQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="root"><div id="site-header" class="Header-module__headerwrapper--2Yq6L"><header class="Header-module__header--3xzeo"><a class="Header-module__homelink--1N9Da" title="Pok&#xE9;API" href="/"><img src="/static/pokeapi_256.3fa72200.png" alt="Pok&#xE9;API"></a><nav class="Header-module__nav--25Sms"><a class="Header-module__link--zKtyy" href="/">Home</a><a class="Header-module__link--zKtyy" href="/about">About</a><a class="Header-module__link--zKtyy" href="/docs/v2">API v2</a><a class="Header-module__link--zKtyy" href="/docs/graphql">GraphQL v1beta</a></nav></header></div><main id="site-content"><div class="Page-module__page--mC5go"><div class="Page-module__constrain_width--N2xeq"><h1>404 &#x2013; Page Not Found</h1><p>We couldn&apos;t find what you were looking for.</p><p>Please contact the owner of the site that linked you to the original URL and let them know their link is broken.</p></div></div></main><footer id="site-footer" class="Footer-module__footer--3nalg"><div class="Footer-module__container--yg5jX"><div>Created by <a href="https://phalt.github.io/">Paul Hallett</a> and other <a href="https://github.com/PokeAPI/pokeapi#contributing">Pok&#xE9;API contributors</a> around the world. Pok&#xE9;mon and Pok&#xE9;mon character names are trademarks of Nintendo.</div><div><a href="https://pokeapi.statuspage.io/"><img alt="Status" src="https://img.shields.io/badge/dynamic/json?color=blue&amp;label=status&amp;query=%24.status.description&amp;url=https%3A%2F%2Fzlfyqp3hlvly.statuspage.io%2Fapi%2Fv2%2Fsummary.json"></a></div></div></footer></div><script type="text/javascript">window.__routeInfo = JSON.parse("{\"template\":\"__react_static_root__/src/pages/404.js\",\"sharedHashesByProp\":{},\"data\":{},\"path\":\"404\",\"sharedData\":{},\"siteData\":{\"alerts\":[{\"htmlMessage\":\"<p>PokeAPI proudly announces Beta support for GraphQL. Access our free console at <a href=\\\"https://beta.pokeapi.co/graphql/console/\\\">beta.pokeapi.co/graphql/console</a> and take a look at the <a href=\\\"/docs/graphql\\\">documentation</a></p>\\n\",\"level\":\"success\",\"id\":\"359b722e\"},{\"htmlMessage\":\"<p><strong>Sword and Shield</strong> data might be inaccurate and lacking in various aspects due to the fact that it is not taken directly from Nintendo&#39;s Pokemon ROMs. If you spot any mistake, please report it <a href=\\\"https://github.com/PokeAPI/pokedex/issues\\\">here</a></p>\\n\",\"level\":\"info\",\"id\":\"c5278044\"}]}}");</script><script defer type="text/javascript" src="/templates/styles.a4c33053.js"></script><script defer type="text/javascript" src="/templates/vendors~main.b08a0546.js"></script><script defer type="text/javascript" src="/main.2a1cfd9e.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"856aad0b2e5f8e00","version":"2024.2.1","r":1,"token":"9fbcf60ab0bc4d7d9c24cc0a2b3b7af0","b":1}' crossorigin="anonymous"></script>
+        </body></html>
+  recorded_at: Sat, 17 Feb 2024 02:42:14 GMT
+recorded_with: VCR 6.2.0
