@@ -23,8 +23,3 @@ import Card from '../bundles/Card/components/Card';
 ReactOnRails.register({
     Card,
 });
-console.log("appplication is loaded")
-Turbo.setFormMode("off")
-document.querySelectorAll('form').forEach(function (el) {
-    el.dataset.turbo = false
-  })
