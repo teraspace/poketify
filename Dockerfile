@@ -11,7 +11,7 @@ WORKDIR /rails
 ENV BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development:test" \
-    RAILS_ENV="development"
+    RAILS_ENV="production"
 
 # Update gems and bundler
 RUN gem update --system --no-document && \
