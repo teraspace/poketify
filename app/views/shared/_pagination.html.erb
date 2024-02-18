@@ -31,7 +31,7 @@
       <% active =  (page.to_i == current_page.to_i ? 'active' : ' ') %>
       <%= link_to page,pokemons_path({page: page, limit: collection.limit, offset: (collection.offset * (page))-20}), data: { turbo: false }, class: active  %>
     <% end %>
-    <a href="#" class="" href="#"><%= collection.total_pages %></a>
+    <%= link_to collection.total_pages,pokemons_path({page: collection.total_pages, limit: collection.limit, offset: (collection.offset * (collection.total_pages))-20}), data: { turbo: false }, class: (collection.total_pages.to_i==params[:page].to_i ? 'active' : '')  %>
     <%= link_to "&raquo;".html_safe, pokemons_path({limit: collection.limit, offset: collection.offset}), data: { turbo: false } %>
 </div>
 

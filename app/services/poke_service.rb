@@ -14,12 +14,12 @@ class PokeService
 
   def pokemons
     url = "#{POKE_API_URL}?offset=#{@offset}&limit=#{@limit}"
-    @response = JSON.parse(request_pokemon(url).body)
+    @response = request_pokemon(url)
   end
 
   def pokemon(id)
     url = "#{POKE_API_URL}/#{id.to_i}"
-    @response = JSON.parse(request_pokemon(url).body)
+    @response = request_pokemon(url)
     @response["url"] = url
     @response
   end
@@ -28,27 +28,31 @@ class PokeService
     return if url.nil?
 
     @response = nil
-    @response = JSON.parse(request_pokemon(url).body)
+    @response = request_pokemon(url)
   end
 
   def species_detail(url)
     return if url.nil?
 
     @response = nil
-    @response = JSON.parse(request_pokemon(url).body)
+    @response = request_pokemon(url)
   end
 
   def evolution_chain(url)
     return if url.nil?
 
     @response = nil
-    @response = JSON.parse(request_pokemon(url).body)
+    @response = request_pokemon(url)
   end
 
   private
 
   def request_pokemon(url)
-    Rails.cache.fetch("pokeapi#{url}", expires_in: 12.hours) do
+
+    resp = nil
+    bailed_resp = nil
+
+    cached_resp = Rails.cache.fetch("#{url}", expires_in: 12.hours) do
       begin
         resp = RestClient.get(url)
       rescue RestClient::MovedPermanently, RestClient::ImATeapot, RestClient::Unauthorized, RestClient::Forbidden => error
@@ -56,12 +60,12 @@ class PokeService
       rescue RestClient::NotFound, RestClient::ExceptionWithResponse => error
         raise PokeApiPermanentError, error.message
       else
-        return resp
+        bailed_resp = JSON.parse(resp.body)
       end
     end
-  end
 
-  def pokemon_unzerializer
+    Rails.cache.delete("#{url}") if cached_resp.class != Hash
 
+    cached_resp == nil ? bailed_resp : cached_resp
   end
 end
