@@ -11,7 +11,13 @@
             <a class="nav-link active" aria-current="page" href=<%= pokemons_path %>>Pokemons</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Session</a>
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              <% if Current.user %>
+                <%= Current.user.name %>
+              <% else %>
+                Session
+              <% end %>
+            </a>
             <ul class="dropdown-menu">
               <% unless Current.user %>
                 <li><a class="dropdown-item" href=<%= new_session_path %>>Login</a></li>
