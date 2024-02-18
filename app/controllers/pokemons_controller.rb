@@ -1,7 +1,7 @@
 class PokemonsController < ApplicationController
   include ErrorsManagement
 
-  skip_before_action :protected_pages, only: [:index]
+  skip_before_action :protected_pages, only: [:index, :show]
 
   def index
     poke_service = PokeService.new(offset: pokemons_params[:offset], limit: pokemons_params[:limit])

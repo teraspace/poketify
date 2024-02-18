@@ -8,14 +8,20 @@
       <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Pokemons</a>
+            <a class="nav-link active" aria-current="page" href=<%= pokemons_path %>>Pokemons</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Session</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Login</a></li>
-              <li><a class="dropdown-item" href="#">Create user</a></li>
-              <li><a class="dropdown-item" href="#">Logout</a></li>
+              <% unless Current.user %>
+                <li><a class="dropdown-item" href=<%= new_session_path %>>Login</a></li>
+                <li><a class="dropdown-item" href=<%= new_user_path %>>Create user</a></li>
+              <% end %>
+              <% if Current.user %>
+                <li>
+                  <%= link_to "Logout", sessions_destroy_path, class: "dropdown-item"  %>
+                </li>
+              <% end %>
             </ul>
           </li>
         </ul>

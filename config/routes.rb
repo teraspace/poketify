@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   namespace :auth, path: '', as: '' do
     resources :users, only: [ :new, :create ]
-    resources :sessions, only: [ :new, :create ]
+    resources :sessions, only: [ :new, :create, :index ]
+    get '/sessions/destroy', to: 'sessions#destroy'
   end
 
   get '/permanent_error', to: 'errors#permanent_error'
