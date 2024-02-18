@@ -92,4 +92,4 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 #VOLUME /data
-CMD ["./bin/dev"]
+CMD ["./bin/rails", "server"]
