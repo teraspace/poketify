@@ -18,6 +18,7 @@
     "compression-webpack-plugin": "^10.0.0",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^5.0.0",
+    "esbuild": "^0.20.0",
     "mini-css-extract-plugin": "^2.7.5",
     "pnp-webpack-plugin": "^1.7.0",
     "prop-types": "^15.8.1",
@@ -39,6 +40,9 @@
     "fork-ts-checker-webpack-plugin": "^8.0.0",
     "react-refresh": "^0.14.0",
     "webpack-dev-server": "^4.15.0"
+  },
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
   },
   "packageManager": "yarn@1.22.21"
 }

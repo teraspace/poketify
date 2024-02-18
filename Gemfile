@@ -74,8 +74,6 @@ group :test do
   gem 'rspec-html'
 end
 
-gem "tailwindcss-rails", "~> 2.3"
-
 gem 'dotenv-rails'
 
 gem 'poke-api-v2'
