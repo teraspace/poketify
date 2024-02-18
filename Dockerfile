@@ -92,4 +92,5 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 #VOLUME /data
+RUN yarn build:css
 CMD ["./bin/rails", "server"]
