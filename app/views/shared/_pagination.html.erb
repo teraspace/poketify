@@ -19,19 +19,16 @@
 
   .pagination a:hover:not(.active) {background-color: #ddd;}
 </style>
-<br><br><br><br>
+<br><br><br><br>current_page, offset
 
 
-<div class="pagination d-flex justify-content-center"  data-turbolinks="false">
-    <%= link_to "&laquo;".html_safe, pokemons_path({limit: collection.limit, offset: 0}), data: { turbo: false } %>
-    <% (1..collection.total_pages).first(9)
-        .each_with_index do |pokemon, index| %>
-      <% page = index + 1 %>
-      <% current_page = params[:page] || 1 %>
-      <% active =  (page.to_i == current_page.to_i ? 'active' : ' ') %>
-      <%= link_to page,pokemons_path({page: page, limit: collection.limit, offset: (collection.offset * (page))-20}), data: { turbo: false }, class: active  %>
+<div class="pagination justify-content-center"  data-turbolinks="false">
+    <%= prev_button(collection) %>
+    <% page_list(collection).each_with_index do |page_item, index| %>
+      <% page = page_item %>
+      <%= page_item(collection, page)  %>
     <% end %>
-    <%= link_to collection.total_pages,pokemons_path({page: collection.total_pages, limit: collection.limit, offset: (collection.offset * (collection.total_pages))-20}), data: { turbo: false }, class: (collection.total_pages.to_i==params[:page].to_i ? 'active' : '')  %>
-    <%= link_to "&raquo;".html_safe, pokemons_path({limit: collection.limit, offset: collection.offset}), data: { turbo: false } %>
+    <%= last_button(collection) %>
+    <%= next_button(collection) %>
 </div>
 
