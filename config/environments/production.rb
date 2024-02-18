@@ -92,7 +92,8 @@ Rails.application.configure do
     "poketify-production.up.railway.app",
     "localhost",
     "prod.charly.test",
-    "payonrails.charly.test"
+    "payonrails.charly.test",
+    "poketify.fly.dev"
   ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }

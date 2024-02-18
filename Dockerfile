@@ -4,6 +4,8 @@
 ARG RUBY_VERSION=3.0.0
 FROM ruby:$RUBY_VERSION-slim as base
 
+LABEL fly_launch_runtime="rails"
+
 # Rails app lives here
 WORKDIR /rails
 
@@ -35,7 +37,7 @@ FROM base as build
 
 # Install packages needed to build gems and node modules
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python yarn
+    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python
 
 # Install yarn
 ARG YARN_VERSION=1.22.21
@@ -53,7 +55,7 @@ RUN bundle install && \
 # Install node modules
 COPY --link package.json package-lock.json yarn.lock ./
 RUN yarn install --frozen-lockfile
-
+RUN npm install
 # Copy application code
 COPY --link . .
 
@@ -61,7 +63,7 @@ COPY --link . .
 RUN bundle exec bootsnap precompile app/ lib/
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-#RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+RUN ./bin/rails assets:precompile
 
 
 # Final stage for app image
@@ -84,13 +86,11 @@ RUN groupadd --system --gid 1000 rails && \
 USER 1000:1000
 
 # Deployment options
-# ENV DATABASE_URL="sqlite3:///data/production.sqlite3"
+ENV DATABASE_URL="sqlite3:///data/production.sqlite3"
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-#VOLUME /data
-RUN yarn build:css
 CMD ["./bin/rails", "server"]
