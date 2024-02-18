@@ -85,7 +85,7 @@ USER 1000:1000
 
 # Deployment options
 # ENV DATABASE_URL="sqlite3:///data/production.sqlite3"
-RUN gem install foreman
+
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
