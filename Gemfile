@@ -86,3 +86,4 @@ gem 'pagy'
 
 gem "shakapacker", "7.0.2"
 gem "react_on_rails", "13.4.0"
+gem "dockerfile-rails"
